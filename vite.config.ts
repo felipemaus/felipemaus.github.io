@@ -19,7 +19,7 @@ export default defineConfig(({ mode }) => ({
       "@": path.resolve(__dirname, "./src"),
     },
   },
-  base: '/',
+  base: '/felipemaus.github.io',
   rollupOptions: {
     output: {
       manualChunks: undefined
