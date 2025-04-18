@@ -20,4 +20,9 @@ export default defineConfig(({ mode }) => ({
     },
   },
   base: '/',
+  rollupOptions: {
+    output: {
+      manualChunks: undefined
+    }
+  }
 }));
