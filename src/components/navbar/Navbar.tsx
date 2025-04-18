@@ -25,7 +25,7 @@ const Navbar = () => {
     const section = document.getElementById(id);
     if (section) {
       section.scrollIntoView({ behavior: "smooth" });
-      setIsMobileMenuOpen(false); // fecha o menu se estiver em mobile
+      setIsMobileMenuOpen(false);
     }
   };
 
@@ -49,7 +49,7 @@ const Navbar = () => {
             <button
               key={link.name}
               onClick={() => handleScrollToSection(link.id)}
-              className="relative text-foreground hover:text-primary transition-colors duration-300 after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-primary after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left"
+              className="relative text-foreground hover:text-red-400 transition-colors duration-300 after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-red-400 after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left"
             >
               {link.name}
             </button>
@@ -73,7 +73,7 @@ const Navbar = () => {
               <button
                 key={link.name}
                 onClick={() => handleScrollToSection(link.id)}
-                className="text-foreground hover:text-primary transition-colors duration-300 py-2 text-left"
+                className="text-foreground hover:text-red-400 transition-colors duration-300 py-2 text-left"
               >
                 {link.name}
               </button>

@@ -35,6 +35,13 @@ const Hero = () => {
     }
   };
 
+  const handleScrollToSection = (id: string) => {
+    const section = document.getElementById(id);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <section
       id="home"
@@ -75,18 +82,19 @@ const Hero = () => {
             className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-in opacity-0"
             style={{ animationDelay: "0.6s", animationFillMode: "forwards" }}
           >
-            <a
-              href="#projects"
+            <button
+              onClick={() => handleScrollToSection("projects")}
               className="px-8 py-3 rounded-full bg-secondary text-secondary-foreground font-medium transition-all duration-300 hover:shadow-md hover:shadow-red-400 hover:-translate-y-1"
             >
               View My Work
-            </a>
-            <a
-              href="#contact"
+            </button>
+
+            <button
+              onClick={() => handleScrollToSection("contact")}
               className="px-8 py-3 rounded-full bg-secondary text-secondary-foreground font-medium transition-all duration-300 hover:shadow-md hover:shadow-red-400 hover:-translate-y-1"
             >
               Contact Me
-            </a>
+            </button>
           </div>
         </div>
       </div>
