@@ -1,51 +1,26 @@
-import { useState, useEffect, useRef } from "react";
-import { Mail, Phone, MapPin, Send } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { useToast } from "@/components/ui/use-toast";
+import { useEffect, useRef } from "react";
+import { Mail, Phone, MapPin } from "lucide-react";
 import { Linkedin } from "@/assets";
 
+const linkObject = [
+  {
+    name: "instagram",
+    url: "https://www.instagram.com/fe_maus/",
+  },
+  {
+    name: "linkedin",
+    url: "https://www.linkedin.com/in/felipe-maus-70477424a/",
+  },
+  {
+    name: "github",
+    url: "https://github.com/felipemaus",
+  },
+];
+//  "instagram", "linkedin", "github"
 const Contact = () => {
-  const { toast } = useToast();
-  const [isSubmitting, setIsSubmitting] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
   const formRef = useRef<HTMLFormElement>(null);
   const infoRef = useRef<HTMLDivElement>(null);
-
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    subject: "",
-    message: "",
-  });
-
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
-  };
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-
-    // Simulate form submission
-    setTimeout(() => {
-      toast({
-        title: "Message sent!",
-        description: "Thanks for reaching out. I'll get back to you soon.",
-      });
-      setIsSubmitting(false);
-      setFormData({
-        name: "",
-        email: "",
-        subject: "",
-        message: "",
-      });
-    }, 1500);
-  };
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -154,21 +129,23 @@ const Contact = () => {
             <div className="mt-12 relative z-10">
               <h4 className="font-medium mb-4">Follow Me</h4>
               <div className="flex gap-4">
-                {["instagram", "linkedin", "github"].map((platform) => (
+                {linkObject.map((platform) => (
                   <a
-                    key={platform}
-                    href={`#${platform}`}
+                    key={platform.name}
+                    href={platform.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="p-3 bg-black/10 rounded-full hover:bg-black/20 transition-colors duration-300"
-                    aria-label={`Follow on ${platform}`}
+                    aria-label={`Follow on ${platform.name}`}
                   >
-                    <span className="sr-only">Follow on {platform}</span>
+                    <span className="sr-only">Follow on {platform.name}</span>
                     <img
                       src={
-                        platform === "linkedin"
+                        platform.name === "linkedin"
                           ? Linkedin
-                          : `https://simpleicons.org/icons/${platform}.svg`
+                          : `https://simpleicons.org/icons/${platform.name}.svg`
                       }
-                      alt={platform}
+                      alt={platform.name}
                       className="w-5 h-5 invert "
                     />
                   </a>
