@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 import { ChevronDown } from "lucide-react";
-import { Formatura, FrontJPEG, TernoSelf, Walter } from "@/assets";
+import { FrontJPEG, TernoSelf, Walter } from "@/assets";
 
 const Hero = () => {
   const heroRef = useRef<HTMLDivElement>(null);
