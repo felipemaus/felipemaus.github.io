@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { ExternalLink, Github } from "lucide-react";
-import { Influence, Higra, Paperon } from "@/assets/projects";
+import { Influence, Higra, Paperon, Payos, Here } from "@/assets/projects";
 
 interface Project {
   id: number;
@@ -39,6 +39,31 @@ const PROJECTS: Project[] = [
     tags: ["React", "JavaScript", "AWS Amplify", "Iot", "GraphQL"],
     image: Higra,
     liveUrl: "https://cco.higra.com.br/login",
+  },
+  {
+    id: 4,
+    title: "Payos Dashboard",
+    description:
+      "Payos is a platform that creates and manages financial transactions, presents monetary data in different ways and offers actions for anticipating, reversing and making payments.",
+    tags: ["React", "JavaScript", "Pagarme API", "Restful API", "Node.js"],
+    image: Payos,
+    liveUrl: "https://dashboard-prd.firebaseapp.com/login",
+  },
+  {
+    id: 5,
+    title: "Here",
+    description:
+      "Platform for advertising properties and developments in the real estate sector. Being a combination of functionalities and features that exist separately in web apps, here aims to encompass all of them in one, generating perfect property management. It also allows the user to buy properties and create networks within the platform.",
+    tags: [
+      "Next.js",
+      "TypeScript",
+      "Google Auth API",
+      "Restful API",
+      "Node.js",
+      "Pagarme API",
+    ],
+    image: Here,
+    liveUrl: "",
   },
 ];
 

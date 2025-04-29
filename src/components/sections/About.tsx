@@ -59,7 +59,7 @@ const About = () => {
               Creative Web Developer
             </h3> */}
             <p className="text-lg text-muted-foreground mb-6">
-              My name is Felipe Flores Maus, i´m 23 years old and i live in
+              My name is Felipe Flores Maus, I´m 23 years old and i live in
               Campo Bom, Brazil.
             </p>
             <p className="text-lg text-muted-foreground mb-6">
@@ -77,7 +77,7 @@ const About = () => {
             </p>
 
             <p className="text-lg text-muted-foreground mb-8">
-              Rigth now i´m seeking my degree in Analizy and Development Systems
+              Rigth now I´m seeking my degree in Analizy and Development Systems
               and coursing some Front-end certification to make my job better
             </p>
 

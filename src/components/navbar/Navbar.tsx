@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Code2, Menu, X } from "lucide-react";
+import { NavLinks } from "@/models/NavLinks";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -12,14 +13,6 @@ const Navbar = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-
-  const navLinks = [
-    { name: "Home", id: "home" },
-    { name: "About", id: "about" },
-    { name: "Projects", id: "projects" },
-    { name: "Skills", id: "skills" },
-    { name: "Contact", id: "contact" },
-  ];
 
   const handleScrollToSection = (id: string) => {
     const section = document.getElementById(id);
@@ -45,7 +38,7 @@ const Navbar = () => {
 
         {/* Desktop Navigation */}
         <div className="hidden md:flex space-x-8">
-          {navLinks.map((link) => (
+          {NavLinks.map((link) => (
             <button
               key={link.name}
               onClick={() => handleScrollToSection(link.id)}
@@ -69,7 +62,7 @@ const Navbar = () => {
       {isMobileMenuOpen && (
         <div className="md:hidden absolute top-full left-0 right-0 bg-background/95 backdrop-blur-md shadow-md py-4 animate-fade-in">
           <div className="container mx-auto px-4 flex flex-col space-y-4">
-            {navLinks.map((link) => (
+            {NavLinks.map((link) => (
               <button
                 key={link.name}
                 onClick={() => handleScrollToSection(link.id)}

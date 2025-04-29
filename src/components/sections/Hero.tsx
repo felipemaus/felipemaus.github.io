@@ -67,14 +67,14 @@ const Hero = () => {
         <div className="text-center max-w-4xl mx-auto">
           <h1 className="mb-2 text-4xl md:text-6xl lg:text-7xl font-bold leading-tight animate-fade-in">
             <span className="text-gradient text-red-400 animate-text-shimmer block">
-              Software Developer
+              Felipe Flores Maus
             </span>
           </h1>
           <p
             className="text-lg md:text-xl text-muted-foreground mt-6 max-w-2xl mx-auto animate-fade-in opacity-0"
             style={{ animationDelay: "0.3s", animationFillMode: "forwards" }}
           >
-            Just a Brazilian Web Developer that enjoy to make projects in
+            Just a Brazilian Frontend Developer that enjoy to make projects in
             products
           </p>
 

@@ -1,21 +1,7 @@
 import { useEffect, useRef } from "react";
 import { Mail, Phone, MapPin } from "lucide-react";
 import { Linkedin } from "@/assets";
-
-const linkObject = [
-  {
-    name: "instagram",
-    url: "https://www.instagram.com/fe_maus/",
-  },
-  {
-    name: "linkedin",
-    url: "https://www.linkedin.com/in/felipe-maus-70477424a/",
-  },
-  {
-    name: "github",
-    url: "https://github.com/felipemaus",
-  },
-];
+import { SocialMediaLinks } from "@/models/SocialMediaLinks";
 //  "instagram", "linkedin", "github"
 const Contact = () => {
   const sectionRef = useRef<HTMLElement>(null);
@@ -129,7 +115,7 @@ const Contact = () => {
             <div className="mt-12 relative z-10">
               <h4 className="font-medium mb-4">Follow Me</h4>
               <div className="flex gap-4">
-                {linkObject.map((platform) => (
+                {SocialMediaLinks.map((platform) => (
                   <a
                     key={platform.name}
                     href={platform.url}
